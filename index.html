@@ -13,7 +13,7 @@
       overflow: hidden;
     }
     nav {
-      background: #333;
+      background: #007BFF; /* タブカラーを青に */
       color: #fff;
       width: 200px;
       flex-shrink: 0;
@@ -27,7 +27,7 @@
       margin: 0;
     }
     nav li {
-      border-bottom: 1px solid #444;
+      border-bottom: 1px solid #0056b3;
     }
     nav a {
       display: block;
@@ -38,7 +38,7 @@
     }
     nav a.active,
     nav a:hover {
-      background: #555;
+      background: #0056b3; /* ホバー・アクティブ時の濃い青 */
     }
     .content {
       flex: 1;
@@ -59,6 +59,7 @@
 <body>
   <nav>
     <ul>
+      <li><a data-target="intro">プロフィール</a></li>
       <li><a data-target="radio" class="active">ラジオ</a></li>
       <li><a data-target="books">本</a></li>
       <li><a data-target="music">音楽</a></li>
@@ -80,6 +81,11 @@
     </ul>
   </nav>
   <div class="content">
+    <section id="intro">
+      <h2>プロフィール</h2>
+      <p>このサイトは≠MEの永田詩央里（しおりん）ちゃんを応援するファンサイトです。しおりんのおすすめや情報をまとめてお届けします。</p>
+      <img src="モブノデレラ.jpg" alt="しおりんの写真" style="max-width:100%; height:auto; margin-top:1rem;" />
+    </section>
     <section id="radio" class="active">
       <h2>ラジオ</h2>
       <p>しおりんが出演するラジオ番組やおすすめ放送回をまとめます。</p>
@@ -158,10 +164,8 @@
     const sections = document.querySelectorAll('section');
     links.forEach(link => {
       link.addEventListener('click', () => {
-        // アクティブリンク変更
         links.forEach(l => l.classList.remove('active'));
         link.classList.add('active');
-        // セクション表示切替
         const targetId = link.getAttribute('data-target');
         sections.forEach(sec => {
           sec.id === targetId ? sec.classList.add('active') : sec.classList.remove('active');
