@@ -5,145 +5,169 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>≠ME 永田詩央里ファンサイト</title>
   <style>
-    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 0; }
-    header { background: #f5f5f5; padding: 1rem; text-align: center; }
-    nav { background: #333; }
-    nav ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; }
-    nav li { margin: 0; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+    }
+    nav {
+      background: #333;
+      color: #fff;
+      width: 200px;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    nav li {
+      border-bottom: 1px solid #444;
+    }
     nav a {
       display: block;
-      padding: 0.75rem 1rem;
+      padding: 1rem;
       color: #fff;
       text-decoration: none;
+      cursor: pointer;
     }
-    nav a:hover { background: #555; }
-    section { padding: 2rem; border-bottom: 1px solid #ddd; }
-    section h2 { margin-top: 0; }
-    footer { background: #f5f5f5; padding: 1rem; text-align: center; }
+    nav a.active,
+    nav a:hover {
+      background: #555;
+    }
+    .content {
+      flex: 1;
+      overflow-y: auto;
+      padding: 2rem;
+    }
+    section {
+      display: none;
+    }
+    section.active {
+      display: block;
+    }
+    section h2 {
+      margin-top: 0;
+    }
   </style>
 </head>
 <body>
-  <header>
-    <h1>≠ME 永田詩央里（しおりん）ファンサイト</h1>
-    <p>Welcome to the fan page summarizing Shiori's recommendations and profile!</p>
-  </header>
-
   <nav>
     <ul>
-      <li><a href="#radio">ラジオ</a></li>
-      <li><a href="#books">本</a></li>
-      <li><a href="#music">音楽</a></li>
-      <li><a href="#movies">映画・ドラマ</a></li>
-      <li><a href="#gourmet">グルメ</a></li>
-      <li><a href="#makeup">メイク</a></li>
-      <li><a href="#fashion">ファッション</a></li>
-      <li><a href="#character">キャラクター</a></li>
-      <li><a href="#events">イベント</a></li>
-      <li><a href="#stage">舞台・ミュージカル</a></li>
-      <li><a href="#blog">ブログ・ネット</a></li>
-      <li><a href="#spots">場所・スポット</a></li>
-      <li><a href="#persons">パーソン</a></li>
-      <li><a href="#items">アイテム</a></li>
-      <li><a href="#nicknames">メンバーの呼び方</a></li>
-      <li><a href="#stationery">文房具</a></li>
-      <li><a href="#profile">パーソナルデータ</a></li>
-      <li><a href="#hiroshima">広島</a></li>
+      <li><a data-target="radio" class="active">ラジオ</a></li>
+      <li><a data-target="books">本</a></li>
+      <li><a data-target="music">音楽</a></li>
+      <li><a data-target="movies">映画・ドラマ</a></li>
+      <li><a data-target="gourmet">グルメ</a></li>
+      <li><a data-target="makeup">メイク</a></li>
+      <li><a data-target="fashion">ファッション</a></li>
+      <li><a data-target="character">キャラクター</a></li>
+      <li><a data-target="events">イベント</a></li>
+      <li><a data-target="stage">舞台・ミュージカル</a></li>
+      <li><a data-target="blog">ブログ・ネット</a></li>
+      <li><a data-target="spots">場所・スポット</a></li>
+      <li><a data-target="persons">パーソン</a></li>
+      <li><a data-target="items">アイテム</a></li>
+      <li><a data-target="nicknames">メンバーの呼び方</a></li>
+      <li><a data-target="stationery">文房具</a></li>
+      <li><a data-target="profile">パーソナルデータ</a></li>
+      <li><a data-target="hiroshima">広島</a></li>
     </ul>
   </nav>
-
-  <!-- Sections -->
-  <section id="radio">
-    <h2>ラジオ</h2>
-    <p>しおりんが出演するラジオ番組やおすすめ放送回をまとめます。</p>
-  </section>
-
-  <section id="books">
-    <h2>本</h2>
-    <p>しおりんが紹介した本やお気に入りの書籍を紹介します。</p>
-  </section>
-
-  <section id="music">
-    <h2>音楽</h2>
-    <p>おすすめの楽曲やお気に入りアーティストなど。</p>
-  </section>
-
-  <section id="movies">
-    <h2>映画・ドラマ</h2>
-    <p>しおりんが好きな映画やドラマのリスト。</p>
-  </section>
-
-  <section id="gourmet">
-    <h2>グルメ</h2>
-    <p>しおりんおすすめの食べ物やお店情報。</p>
-  </section>
-
-  <section id="makeup">
-    <h2>メイク</h2>
-    <p>愛用しているコスメやメイクのコツ。</p>
-  </section>
-
-  <section id="fashion">
-    <h2>ファッション</h2>
-    <p>しおりんのファッションスタイルやブランド。</p>
-  </section>
-
-  <section id="character">
-    <h2>キャラクター</h2>
-    <p>好きなキャラクターやコラボ情報。</p>
-  </section>
-
-  <section id="events">
-    <h2>イベント</h2>
-    <p>参加したイベントやライブ情報。</p>
-  </section>
-
-  <section id="stage">
-    <h2>舞台・ミュージカル</h2>
-    <p>出演舞台や観劇レポート。</p>
-  </section>
-
-  <section id="blog">
-    <h2>ブログ・ネット</h2>
-    <p>しおりんのブログ記事やSNSリンク。</p>
-  </section>
-
-  <section id="spots">
-    <h2>場所・スポット</h2>
-    <p>しおりんが訪れた場所やおすすめスポット。</p>
-  </section>
-
-  <section id="persons">
-    <h2>パーソン</h2>
-    <p>しおりんが影響を受けた人物や仲の良いメンバー。</p>
-  </section>
-
-  <section id="items">
-    <h2>アイテム</h2>
-    <p>愛用アイテムやグッズ。</p>
-  </section>
-
-  <section id="nicknames">
-    <h2>メンバーの呼び方</h2>
-    <p>しおりんやほかメンバーのニックネーム。</p>
-  </section>
-
-  <section id="stationery">
-    <h2>文房具</h2>
-    <p>おすすめの文房具や使いやすいアイテム。</p>
-  </section>
-
-  <section id="profile">
-    <h2>パーソナルデータ</h2>
-    <p>生年月日、出身地、血液型などの基本情報。</p>
-  </section>
-
-  <section id="hiroshima">
-    <h2>広島</h2>
-    <p>しおりんの地元、広島に関する情報。</p>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 ≠ME 永田詩央里ファンサイト</p>
-  </footer>
+  <div class="content">
+    <section id="radio" class="active">
+      <h2>ラジオ</h2>
+      <p>しおりんが出演するラジオ番組やおすすめ放送回をまとめます。</p>
+    </section>
+    <section id="books">
+      <h2>本</h2>
+      <p>しおりんが紹介した本やお気に入りの書籍を紹介します。</p>
+    </section>
+    <section id="music">
+      <h2>音楽</h2>
+      <p>おすすめの楽曲やお気に入りアーティストなど。</p>
+    </section>
+    <section id="movies">
+      <h2>映画・ドラマ</h2>
+      <p>しおりんが好きな映画やドラマのリスト。</p>
+    </section>
+    <section id="gourmet">
+      <h2>グルメ</h2>
+      <p>しおりんおすすめの食べ物やお店情報。</p>
+    </section>
+    <section id="makeup">
+      <h2>メイク</h2>
+      <p>愛用しているコスメやメイクのコツ。</p>
+    </section>
+    <section id="fashion">
+      <h2>ファッション</h2>
+      <p>しおりんのファッションスタイルやブランド。</p>
+    </section>
+    <section id="character">
+      <h2>キャラクター</h2>
+      <p>好きなキャラクターやコラボ情報。</p>
+    </section>
+    <section id="events">
+      <h2>イベント</h2>
+      <p>参加したイベントやライブ情報。</p>
+    </section>
+    <section id="stage">
+      <h2>舞台・ミュージカル</h2>
+      <p>出演舞台や観劇レポート。</p>
+    </section>
+    <section id="blog">
+      <h2>ブログ・ネット</h2>
+      <p>しおりんのブログ記事やSNSリンク。</p>
+    </section>
+    <section id="spots">
+      <h2>場所・スポット</h2>
+      <p>しおりんが訪れた場所やおすすめスポット。</p>
+    </section>
+    <section id="persons">
+      <h2>パーソン</h2>
+      <p>しおりんが影響を受けた人物や仲の良いメンバー。</p>
+    </section>
+    <section id="items">
+      <h2>アイテム</h2>
+      <p>愛用アイテムやグッズ。</p>
+    </section>
+    <section id="nicknames">
+      <h2>メンバーの呼び方</h2>
+      <p>しおりんやほかメンバーのニックネーム。</p>
+    </section>
+    <section id="stationery">
+      <h2>文房具</h2>
+      <p>おすすめの文房具や使いやすいアイテム。</p>
+    </section>
+    <section id="profile">
+      <h2>パーソナルデータ</h2>
+      <p>生年月日、出身地、血液型などの基本情報。</p>
+    </section>
+    <section id="hiroshima">
+      <h2>広島</h2>
+      <p>しおりんの地元、広島に関する情報。</p>
+    </section>
+  </div>
+  <script>
+    const links = document.querySelectorAll('nav a');
+    const sections = document.querySelectorAll('section');
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        // アクティブリンク変更
+        links.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+        // セクション表示切替
+        const targetId = link.getAttribute('data-target');
+        sections.forEach(sec => {
+          sec.id === targetId ? sec.classList.add('active') : sec.classList.remove('active');
+        });
+      });
+    });
+  </script>
 </body>
 </html>
