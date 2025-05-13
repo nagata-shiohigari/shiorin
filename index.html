@@ -4,55 +4,73 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>≠ME 永田詩央里ファンサイト</title>
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --primary: #003366;
+      --primary-dark: #002244;
+      --bg-light: #f9f9f9;
+      --text-dark: #333;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      margin: 0;
-      font-family: Arial, sans-serif;
       display: flex;
       height: 100vh;
+      font-family: 'Noto Sans JP', sans-serif;
+      color: var(--text-dark);
+      background: var(--bg-light);
       overflow: hidden;
     }
     nav {
-      background: #003366; /* 濃い青に変更 */
-      color: #fff;
-      width: 200px;
-      flex-shrink: 0;
+      width: 220px;
+      background: var(--primary);
       display: flex;
       flex-direction: column;
-      overflow-y: auto;
+      padding-top: 1rem;
+      box-shadow: 2px 0 8px rgba(0,0,0,0.1);
     }
-    nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    nav li {
-      border-bottom: 1px solid #0056b3;
-    }
+    nav ul { list-style: none; }
+    nav li + li { margin-top: 0.25rem; }
     nav a {
       display: block;
-      padding: 1rem;
+      padding: 0.75rem 1rem;
       color: #fff;
       text-decoration: none;
-      cursor: pointer;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      border-radius: 4px;
+      transition: background 0.3s;
     }
     nav a.active,
     nav a:hover {
-      background: #002244; /* ホバー・アクティブ時のより濃い青 */
+      background: var(--primary-dark);
     }
     .content {
       flex: 1;
       overflow-y: auto;
       padding: 2rem;
     }
-    section {
-      display: none;
-    }
-    section.active {
-      display: block;
+    .section-card {
+      background: #fff;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
     section h2 {
-      margin-top: 0;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+    .section-card p,
+    .section-card ul { margin-bottom: 1rem; }
+    .section-card ul li { margin-bottom: 0.5rem; }
+    img.responsive {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+      margin-top: 1rem;
     }
   </style>
 </head>
@@ -76,19 +94,22 @@
       <li><a data-target="hiroshima">広島</a></li>
     </ul>
   </nav>
-  <div class="content">
-    <section id="intro">
+    <div class="content">
+    <section id="intro" class="section-card">
       <h2>プロフィール</h2>
-      <p>このサイトは≠MEの永田詩央里（しおりん）ちゃんを応援するファンサイトです。しおりんのおすすめや情報をまとめてお届けします。</p>
-      <p>永田詩央里　とは？</p>
-      <p>所属：≠ME</p>
-      <p>生年月日：2004年4月2日</p>
-      <p>出身地：広島県</p>
-      <p>血液型：A型</p>
-      <p>身長：150.6㎝（24/04/02 SHOWROOM）、プロフィール上は150.2cm</p>
-      <img src="モブノデレラ.jpg" alt="しおりんの写真" style="max-width:100%; height:auto; margin-top:1rem;" />
+      <p>このサイトは≠MEの永田詩央里（しおりん）ちゃんを応援するファンサイトです。</p>
+      <figure>
+        <img src="モブノデレラ.jpg" alt="しおりんの写真" class="responsive">
+        <figcaption>永田詩央里</figcaption>
+      </figure>
+      <ul>
+        <li>生年月日：2004年4月2日</li>
+        <li>出身地：広島県</li>
+        <li>血液型：A型</li>
+        <li>身長：150.6cm</li>
+      </ul>
     </section>
-    <section id="radio" class="active">
+    <section id="radio" class="section-card">
       <h2>ラジオ</h2>
       <p>しおりんが出演するラジオ番組やおすすめ放送回をまとめます。</p>
       <ul>
@@ -516,17 +537,15 @@
       </ul>
     </section>
   </div>
-  <script>
+   <script>
     const links = document.querySelectorAll('nav a');
     const sections = document.querySelectorAll('section');
     links.forEach(link => {
       link.addEventListener('click', () => {
         links.forEach(l => l.classList.remove('active'));
         link.classList.add('active');
-        const targetId = link.getAttribute('data-target');
-        sections.forEach(sec => {
-          sec.id === targetId ? sec.classList.add('active') : sec.classList.remove('active');
-        });
+        const target = link.getAttribute('data-target');
+        sections.forEach(sec => sec.id === target ? sec.scrollIntoView({behavior: 'smooth'}) : sec);
       });
     });
   </script>
