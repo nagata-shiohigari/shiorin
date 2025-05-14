@@ -96,6 +96,14 @@
         overflow: auto;
       }
       nav {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        width: 100%;
+        flex-direction: row;
+        overflow-x: auto;
+        box-shadow: 0 2px 8px var(--shadow);
+      }
         width: 100%;
         flex-direction: row;
         overflow-x: auto;
@@ -123,8 +131,25 @@
         font-size: 1.5rem;
       }
     }
+    /* 画像ギャラリー対応 */
+    .images-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .images-row-item {
+      flex: 1 1 calc(50% - 1rem);
+    }
+    .images-row-item img,
+    .images-row-item .hatena-fotolife {
+      width: 100% !important;
+      height: auto !important;
+      border-radius: 8px;
+    }
   </style>
 </head>
+  
 <body>
   <nav>
     <ul>
