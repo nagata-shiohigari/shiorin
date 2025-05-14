@@ -118,8 +118,21 @@
   font-size: 0.9rem;
   text-align: right;
 }
-    /* スマホ & タブレット対応 */
+   /* スマホ & タブレット対応 */
     @media (max-width: 768px) {
+      /* モバイルでは3カラムを縦並びに変更 */
+      .music-table li {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .music-table .track,
+      .music-table .note {
+        margin-top: 0.5rem;
+        text-align: left;
+      }
+
+      body {
       body {
         flex-direction: column;
         height: auto;
