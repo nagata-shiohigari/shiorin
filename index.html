@@ -4,189 +4,414 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>≠ME 永田詩央里ちゃん情報局</title>
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+  <meta name="description" content="≠ME 永田詩央里（しおりん）ちゃん自身のことや、紹介してくれたものをまとめたファンサイト（非公式）です。">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --primary: #1a1f71;
       --primary-light: #3a44b7;
-      --bg-light: #f4f6fa;
-      --text-dark: #2e2e3a;
-      --card-bg: #ffffff;
+      --bg: #f4f6fa;
+      --text: #1f2430;
+      --muted: #5c6474;
+      --card: #ffffff;
+      --border: rgba(31,36,48,0.10);
       --shadow: rgba(0, 0, 0, 0.08);
+      --radius: 14px;
+      --max: 980px;
+      --topbar-h: 64px;
     }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
-      display: flex;
-      height: 100vh;
-      font-family: 'Montserrat', sans-serif;
-      color: var(--text-dark);
-      background: var(--bg-light);
-      overflow: hidden;
-      transition: background 0.3s;
+      margin: 0;
+      font-family: "Noto Sans JP", "Montserrat", system-ui, -apple-system, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.75;
+      min-height: 100vh;
     }
-    nav {
-      width: 240px;
-      background: linear-gradient(180deg, var(--primary), var(--primary-light));
+
+    /* a11y */
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: 8px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 8px 12px;
+      border-radius: 10px;
+      z-index: 2000;
+    }
+    .skip-link:focus { left: 12px; }
+
+    a {
+      color: var(--primary);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    a:hover { opacity: 0.9; }
+
+    /* Top bar */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 1200;
+      height: var(--topbar-h);
+      display: flex;
+      align-items: center;
+      background: rgba(244,246,250,0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+    .topbar-inner {
+      width: 100%;
+      max-width: calc(var(--max) + 260px);
+      margin: 0 auto;
+      padding: 0 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .brand {
       display: flex;
       flex-direction: column;
-      padding-top: 1rem;
-      box-shadow: 2px 0 12px var(--shadow);
-      overflow-y: auto;
+      min-width: 0;
     }
-    nav ul { list-style: none; }
-    nav li + li { margin-top: 0.5rem; }
-    nav a {
+    .brand-title {
+      font-family: "Montserrat", "Noto Sans JP", sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+      font-size: 1.02rem;
+      color: var(--text);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .brand-sub {
+      font-size: 0.82rem;
+      color: var(--muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .topbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+    .btn {
+      appearance: none;
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--text);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .btn:hover { transform: translateY(-1px); box-shadow: 0 6px 14px var(--shadow); }
+    .btn.ghost {
+      background: transparent;
+      box-shadow: none;
+    }
+
+    /* Layout */
+    .layout {
+      display: flex;
+      width: 100%;
+      max-width: calc(var(--max) + 260px);
+      margin: 0 auto;
+      padding: 18px 16px 40px;
+      gap: 18px;
+    }
+
+    /* Nav (desktop) */
+    .site-nav {
+      width: 260px;
+      flex: 0 0 260px;
+      background: linear-gradient(180deg, var(--primary), var(--primary-light));
+      border-radius: var(--radius);
+      box-shadow: 0 8px 18px var(--shadow);
+      overflow: hidden;
+      position: sticky;
+      top: calc(var(--topbar-h) + 18px);
+      align-self: flex-start;
+      max-height: calc(100vh - var(--topbar-h) - 36px);
+      display: flex;
+      flex-direction: column;
+    }
+    .nav-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 14px 10px;
+      color: #fff;
+      border-bottom: 1px solid rgba(255,255,255,0.18);
+    }
+    .nav-title {
+      font-weight: 700;
+      letter-spacing: 0.4px;
+    }
+    .icon-btn {
+      appearance: none;
+      border: 1px solid rgba(255,255,255,0.25);
+      background: rgba(255,255,255,0.12);
+      color: #fff;
+      width: 36px;
+      height: 32px;
+      border-radius: 10px;
+      cursor: pointer;
+      display: none; /* desktop: hidden */
+    }
+    .nav-list {
+      list-style: none;
+      margin: 0;
+      padding: 10px;
+      overflow: auto;
+    }
+    .nav-list li + li { margin-top: 6px; }
+    .nav-link {
       display: block;
-      padding: 0.75rem 1.5rem;
+      padding: 10px 12px;
       color: #fff;
       text-decoration: none;
-      font-weight: 500;
-      letter-spacing: 0.5px;
-      border-radius: 6px;
-      transition: background 0.3s, transform 0.2s;
+      border-radius: 10px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      transition: background 0.2s ease, transform 0.15s ease;
     }
-    nav a:hover,
-    nav a.active {
-      background: rgba(255, 255, 255, 0.15);
-      transform: translateX(4px);
-    }
-    .content {
-      flex: 1;
-      overflow-y: auto;
-      padding: 2.5rem;
+    .nav-link:hover { background: rgba(255,255,255,0.15); transform: translateX(2px); }
+    .nav-link.active { background: rgba(255,255,255,0.22); }
+
+    /* Main content */
+    main.content {
+      flex: 1 1 auto;
+      min-width: 0;
     }
     .section-card {
-      background: var(--card-bg);
-      padding: 2rem;
-      margin-bottom: 2.5rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px var(--shadow);
-      transition: box-shadow 0.3s, transform 0.3s;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: 0 8px 18px var(--shadow);
+      padding: 22px;
+      margin-bottom: 18px;
     }
-    .section-card:hover {
-      box-shadow: 0 6px 16px var(--shadow);
-      transform: translateY(-4px);
+    section {
+      scroll-margin-top: calc(var(--topbar-h) + 18px);
     }
-    section h2 {
-      font-size: 2rem;
-      margin-bottom: 1.25rem;
+    h2 {
+      font-size: 1.55rem;
+      margin: 0 0 14px 0;
       color: var(--primary);
       border-left: 4px solid var(--primary-light);
-      padding-left: 0.75rem;
+      padding-left: 10px;
     }
-    .section-card p,
-    .section-card ul { margin-bottom: 1rem; }
-    .section-card ul li { margin-bottom: 0.5rem; }
+    p { margin: 0 0 10px 0; color: var(--text); }
+    ul { margin: 0 0 10px 1.2rem; }
+    li { margin-bottom: 6px; }
+    .muted { color: var(--muted); }
+
+    /* Images */
     img.responsive {
       width: 100%;
       height: auto;
-      border-radius: 8px;
-      margin-top: 1rem;
-      transition: transform 0.3s;
+      border-radius: 12px;
+      margin-top: 10px;
+      border: 1px solid var(--border);
     }
-    img.responsive:hover {
-      transform: scale(1.02);
-    }
-     /* プロフィール画像の最大幅制限 */
     #intro img.responsive {
-      max-width: 300px;
-      margin: 1rem auto 0 auto;
+      max-width: 320px;
+      margin: 12px auto 0;
       display: block;
     }
-    img.responsive:hover {
-      transform: scale(1.02);
-    }
-   /* テーブル風リスト用スタイル */
-.music-table {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.music-table li {
-  display: grid;
-  grid-template-columns: 2fr 3fr 1fr; /* 3カラム比率：アーティスト / 曲名 / 備考 */
-  gap: 1rem;
-  align-items: center;
-  padding: 0.75rem 1rem;
-  border-bottom: 1px solid #e0e0e0;
-  transition: background 0.2s;
-}
-.music-table li:hover {
-  background: var(--bg-light);
-}
-.music-table .artist {
-  font-weight: 600;
-  color: var(--primary);
-}
-.music-table .track {
-  color: var(--text-dark);
-}
-.music-table .note {
-  color: #666;
-  font-size: 0.9rem;
-  text-align: right;
-}
-  /* スマホ & タブレット対応 */
-    @media (max-width: 768px) {
-      /* モバイルでは3カラムを縦並びに変更 */
-      .music-table li {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .music-table .track,
-      .music-table .note {
-        margin-top: 0.5rem;
-        text-align: left;
-      }
+    figure { margin: 0; }
+    figcaption { font-size: 0.92rem; color: var(--muted); }
 
-      body {
+    /* "目次" card in content */
+    .toc-card p { color: var(--muted); }
+    .toc-grid {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .toc-link {
+      display: block;
+      background: rgba(26,31,113,0.06);
+      border: 1px solid rgba(26,31,113,0.12);
+      border-radius: 12px;
+      padding: 10px 12px;
+      text-decoration: none;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .toc-link:hover { background: rgba(26,31,113,0.10); }
+
+    /* Music table */
+    .music-table {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .music-table li {
+      display: grid;
+      grid-template-columns: 2fr 3fr 2fr;
+      gap: 10px;
+      align-items: start;
+      padding: 12px 12px;
+      border-bottom: 1px solid var(--border);
+      margin: 0;
+    }
+    .music-table li:last-child { border-bottom: none; }
+    .music-table li:hover { background: rgba(0,0,0,0.02); }
+    .music-table .artist {
+      font-weight: 800;
+      color: var(--primary);
+    }
+    .music-table .track { color: var(--text); }
+    .music-table .note {
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-align: right;
+    }
+
+    /* Images row (メイク・ファッション) */
+    .images-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 10px 0 12px;
+    }
+    .images-row-item img {
+      margin-top: 0;
+    }
+
+    /* Footer */
+    .footer p { margin: 0 0 8px; }
+
+    /* Overlay + mobile nav */
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.35);
+      z-index: 1300;
+    }
+
+    @media (max-width: 900px) {
+      .layout {
         flex-direction: column;
-        height: auto;
-        overflow: auto;
+        padding: 14px 12px 32px;
       }
-      nav {
-        position: sticky;
+      .site-nav {
+        position: fixed;
         top: 0;
-        z-index: 1000;
-        width: 100%;
-        flex-direction: row;
-        overflow-x: auto;
-        box-shadow: 0 2px 8px var(--shadow);
+        bottom: 0;
+        left: 0;
+        width: min(86vw, 340px);
+        max-height: none;
+        border-radius: 0 16px 16px 0;
+        transform: translateX(-105%);
+        transition: transform 0.18s ease;
+        z-index: 1400;
       }
-      nav ul { display: flex; flex-wrap: nowrap; }
-      nav li { margin-right: 0.5rem; }
-      nav a { padding: 0.5rem 1rem; white-space: nowrap; }
-      .content { padding: 1rem; }
-      .section-card { padding: 1.5rem; margin-bottom: 1.5rem; }
-      section h2 { font-size: 1.5rem; }
+      body.nav-open .site-nav {
+        transform: translateX(0);
+      }
+      .icon-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+      body.nav-open { overflow: hidden; }
+      .toc-grid { grid-template-columns: 1fr; }
+      .music-table li {
+        grid-template-columns: 1fr;
+      }
+      .music-table .note { text-align: left; }
+      .images-row { grid-template-columns: 1fr; }
     }
   </style>
 </head>
-  
+
 <body>
-  <nav>
-    <ul>
-      <li><a data-target="intro" class="active">プロフィール</a></li>
-      <li><a data-target="radio">ラジオ</a></li>
-      <li><a data-target="books">本・ブログ</a></li>
-      <li><a data-target="music">音楽</a></li>
-      <li><a data-target="movies">映画・ドラマ</a></li>
-      <li><a data-target="gourmet">グルメ</a></li>
-      <li><a data-target="makeup">メイク・ファッション</a></li>
-      <li><a data-target="character">キャラクター</a></li>
-      <li><a data-target="stage">イベント・舞台</a></li>
-      <li><a data-target="spots">場所・スポット</a></li>
-      <li><a data-target="persons">パーソン</a></li>
-      <li><a data-target="items">アイテム</a></li>
-      <li><a data-target="nicknames">ニックネーム</a></li>
-      <li><a data-target="profile">パーソナルデータ</a></li>
-      <li><a data-target="hiroshima">広島</a></li>
-    </ul>
-  </nav>
-  <div class="content">
-    <section id="intro" class="section-card">
+  <a class="skip-link" href="#main">本文へ</a>
+
+  <header class="topbar" id="top">
+    <div class="topbar-inner">
+      <div class="brand" aria-label="サイト名">
+        <div class="brand-title">≠ME 永田詩央里ちゃん情報局</div>
+        <div class="brand-sub">しおりんが紹介してくれたものまとめ（非公式）</div>
+      </div>
+      <div class="topbar-actions">
+        <a class="btn ghost" href="#toc">目次</a>
+        <button class="btn" id="navToggle" type="button" aria-controls="site-nav" aria-expanded="false">メニュー</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <div class="overlay" id="overlay" hidden></div>
+
+    <nav id="site-nav" class="site-nav" aria-label="目次">
+      <div class="nav-header">
+        <span class="nav-title">目次</span>
+        <button class="icon-btn" id="navClose" type="button" aria-label="メニューを閉じる">×</button>
+      </div>
+      <ul class="nav-list">
+        <li><a class="nav-link" href="#intro">プロフィール</a></li>
+        <li><a class="nav-link" href="#radio">ラジオ</a></li>
+        <li><a class="nav-link" href="#books">本・ブログ</a></li>
+        <li><a class="nav-link" href="#music">音楽</a></li>
+        <li><a class="nav-link" href="#movies">映画・ドラマ</a></li>
+        <li><a class="nav-link" href="#gourmet">グルメ</a></li>
+        <li><a class="nav-link" href="#makeup">メイク・ファッション</a></li>
+        <li><a class="nav-link" href="#character">キャラクター</a></li>
+        <li><a class="nav-link" href="#stage">イベント・舞台</a></li>
+        <li><a class="nav-link" href="#spots">場所・スポット</a></li>
+        <li><a class="nav-link" href="#persons">パーソン</a></li>
+        <li><a class="nav-link" href="#items">アイテム</a></li>
+        <li><a class="nav-link" href="#nicknames">ニックネーム</a></li>
+        <li><a class="nav-link" href="#profile">パーソナルデータ</a></li>
+        <li><a class="nav-link" href="#hiroshima">広島</a></li>
+      </ul>
+    </nav>
+
+    <main id="main" class="content">
+      <section id="toc" class="section-card toc-card">
+        <h2>目次</h2>
+        <p>気になる項目をタップ／クリックすると、その場所へ移動します。</p>
+        <ul class="toc-grid">
+          <li><a class="toc-link" href="#intro">プロフィール</a></li>
+          <li><a class="toc-link" href="#radio">ラジオ</a></li>
+          <li><a class="toc-link" href="#books">本・ブログ</a></li>
+          <li><a class="toc-link" href="#music">音楽</a></li>
+          <li><a class="toc-link" href="#movies">映画・ドラマ</a></li>
+          <li><a class="toc-link" href="#gourmet">グルメ</a></li>
+          <li><a class="toc-link" href="#makeup">メイク・ファッション</a></li>
+          <li><a class="toc-link" href="#character">キャラクター</a></li>
+          <li><a class="toc-link" href="#stage">イベント・舞台</a></li>
+          <li><a class="toc-link" href="#spots">場所・スポット</a></li>
+          <li><a class="toc-link" href="#persons">パーソン</a></li>
+          <li><a class="toc-link" href="#items">アイテム</a></li>
+          <li><a class="toc-link" href="#nicknames">ニックネーム</a></li>
+          <li><a class="toc-link" href="#profile">パーソナルデータ</a></li>
+          <li><a class="toc-link" href="#hiroshima">広島</a></li>
+        </ul>
+      </section>
+
+<section id="intro" class="section-card">
       <h2>プロフィール</h2>
       <p>このサイトは≠MEの永田詩央里（しおりん）ちゃん自身のことや、紹介してくれたものをまとめています。</p>
       <figure>
@@ -211,7 +436,7 @@
         <li><a href="https://www.tfm.co.jp/murakamiradio/" target="_blank" rel="noopener">村上RADIO</a>新たな曲に出会うことができます（25/10/24 ≠ME 永田詩央里のけれけれ）</li>
         <li><a href="https://podcastqr.joqr.co.jp/programs/rm-essay" target="_blank" rel="noopener">武田砂鉄　ラジオマガジン「ラジマガエッセイ」</a>（25/10/17 ≠ME 永田詩央里のけれけれ）</li>
         <li><a href="https://sbc21.co.jp/blogwp/rdpg/mouchu/" target="_blank" rel="noopener">もう中学生のおラジオ中</a>もう中学生さんのふわっとしたしゃべりがクセになります（25/10/10 ≠ME 永田詩央里のけれけれ）</li>
-        <li><a href="https://www.tbsradio.jp/onej" target="_blank" rel="noopener">ONE-J</a>（25/10/10 ≠ME 永田詩央里のけれけれ）
+        <li><a href="https://www.tbsradio.jp/onej" target="_blank" rel="noopener">ONE-J</a>（25/10/10 ≠ME 永田詩央里のけれけれ）</li>
         <li><a href="https://www.jorf.co.jp/?program=tabjun" target="_blank" rel="noopener">タブレット純　音楽の黄金時代</a>（25/10/03 ≠ME 永田詩央里のけれけれ）</li>
         <li><a href="https://audee.jp/program/show/100000365" target="_blank" rel="noopener">AuDee CONNECT・水曜日【蓮見翔（ダウ90000）】</a>（25/10/03 ≠ME 永田詩央里のけれけれ）</li>
         <li><a href="https://podcasts.apple.com/jp/podcast/%E3%82%88%E3%81%AA%E6%B0%B4-%E3%83%AA%E3%82%BF%E3%83%BC%E3%83%B3%E3%82%BA/id1701058800" target="_blank" rel="noopener">よな水　リターンズ</a>（25/09/26 ≠ME 永田詩央里のけれけれ）</li>
@@ -254,11 +479,11 @@
     <section id="music" class="section-card">
       <h2>音楽</h2>
       <p>おすすめの楽曲やお気に入りアーティストなど。</p>
-      <p></p>spotifyでプレイリスト化したものは<a href=https://open.spotify.com/playlist/6zYInbc0mlVEzDXuT9pQRR?si=1SKbpm2UTpGHxNjWpLi3zA&pi=K5iRKyXkSPGFH" target="_blank" rel="noopener">こちら</a></p>
+      <p></p>spotifyでプレイリスト化したものは<a href="https://open.spotify.com/playlist/6zYInbc0mlVEzDXuT9pQRR?si=1SKbpm2UTpGHxNjWpLi3zA&pi=K5iRKyXkSPGFH" target="_blank" rel="noopener">こちら</a></p>
       <ul class="music-table">
       <li>
-      <span class="artist">風</span>
-      <span class=s="trac>何かいいことありそうな明日 </span>
+      <span class="artist"> </span>
+      <span class="track"> </span>
       <span class="note">25/12/19 ≠ME 永田詩央里のけれけれ</span>
       </li>  
       <li>
@@ -290,6 +515,7 @@
       <span class="artist">吉田拓郎</span>
       <span class="track">ガラスの言葉</span>
       <span class="note">25/10/24 ≠ME 永田詩央里のけれけれ</span>
+      </li>
       <li>
       <span class="artist">かぐや姫</span>
       <span class="track">大きな片想い</span>
@@ -387,7 +613,7 @@
       </li>  
       <li>
       <span class="artist">N'夙川BOYS</span>
-      <span class="track"><a href=https://youtu.be/e106Nc7hNq4?si=6AcyX1ry52qEXaoi" target="_blank" rel="noopener">プラネットマジック</a></span>
+      <span class="track"><a href="https://youtu.be/e106Nc7hNq4?si=6AcyX1ry52qEXaoi" target="_blank" rel="noopener">プラネットマジック</a></span>
       <span class="note">25/07/10　ノイミーステーション</span>
       </li>
       <li>
@@ -402,7 +628,7 @@
       </li>
       <li>
       <span class="artist">サンドパイパーズ</span>
-      <span class="track"><a href=https://youtu.be/a0f3-HKjTMY?si=FHHH7SIiCeUSsGAr" target="_blank" rel="noopener">Chotto Matte Kudasi (Never Can Say Goodbye)</a></span>
+      <span class="track"><a href="https://youtu.be/a0f3-HKjTMY?si=FHHH7SIiCeUSsGAr" target="_blank" rel="noopener">Chotto Matte Kudasi (Never Can Say Goodbye)</a></span>
       <span class="note">25/05/16 Instagramストーリーズ</span>
       </li>
         <li>
@@ -460,7 +686,7 @@
       <span class="track">Wild Wild Summer/ワイルド・サマー/ビートでゴーゴー</span>
       <span class="note">24/08/28 <a href="https://music.line.me/webapp/playlist/upi7nLrdtfvhxjzlBsCJZME-GwISN3C6t7j7" target="_blank" rel="noopener">LINE MUSIC 夏が来たから聴きたいプレイリスト</a></span>
       </li>
-      　<li>
+      <li>
       <span class="artist">斉藤由貴</span>
       <span class="track">砂の城</span>
       <span class="note">24/08/28 <a href="https://music.line.me/webapp/playlist/upi7nLrdtfvhxjzlBsCJZME-GwISN3C6t7j7" target="_blank" rel="noopener">LINE MUSIC 夏が来たから聴きたいプレイリスト</a></span>
@@ -682,7 +908,7 @@
       <h2>キャラクター</h2>
       <p>好きなキャラクター</p>
       <ul>
-    <li>家の玄関に<a href="https://youtube.com/clip/UgkxQE5MD0X9zu6M-BtWKTXc01QWA0VOhJ-F?feature=shared" target="_blank" rel=2noopener">土佐犬</a>をいくつか置いている（25/06/20イコノイジョイチャンネル）</li>
+    <li>家の玄関に<a href="https://youtube.com/clip/UgkxQE5MD0X9zu6M-BtWKTXc01QWA0VOhJ-F?feature=shared" target="_blank" rel="noopener">土佐犬</a>をいくつか置いている（25/06/20イコノイジョイチャンネル）</li>
     <li><a href="https://ja.wikipedia.org/wiki/%E9%A3%9B%E3%81%B3%E5%87%BA%E3%81%97%E5%9D%8A%E3%82%84" target="_blank" rel="noopener">飛び出し坊や</a>（25/07/04 ≠ME 永田詩央里のけれけれ、25/04/02 SHOWROOM、24/12/25ノイミーステーション）</li>
     <li>ちいかわはみんな好き、うさぎのシール（24/04/02 SHOWROOM）</li>
     <li><a href="https://www.sanrio.co.jp/characters/badtzmaru/" target="_blank" rel="noopener">バッドばつ丸</a>、<a href="https://www.sanrio.co.jp/characters/pompompurin/" target="_blank" rel="noopener">ポムポムプリン</a>（24/04/02 SHOWROOM）</li>
@@ -828,17 +1054,71 @@
       <li><a href="https://www.chikara.jp/" target="_blank" rel="noopener">ちから</a>のうどん（23/04/08 SHOWROOM）</li>
       </ul>
     </section>
+
+      <footer class="section-card footer">
+        <p class="muted">このサイトはファンによる非公式まとめです。公式情報は≠ME公式サイト等をご確認ください。</p>
+        <p><a href="#top">ページ上部へ戻る</a></p>
+      </footer>
+    </main>
   </div>
-  
- <script>
-    const links = document.querySelectorAll('nav a');
-    links.forEach(link => {
-      link.addEventListener('click', () => {
-        links.forEach(l => l.classList.remove('active'));
-        link.classList.add('active');
-        document.getElementById(link.dataset.target).scrollIntoView({behavior: 'smooth'});
-      });
+
+  <script>
+    // Mobile nav open/close
+    const body = document.body;
+    const nav = document.getElementById("site-nav");
+    const toggle = document.getElementById("navToggle");
+    const closeBtn = document.getElementById("navClose");
+    const overlay = document.getElementById("overlay");
+    const navLinks = nav.querySelectorAll("a.nav-link");
+
+    function openNav() {
+      body.classList.add("nav-open");
+      overlay.hidden = false;
+      toggle.setAttribute("aria-expanded", "true");
+    }
+    function closeNav() {
+      body.classList.remove("nav-open");
+      overlay.hidden = true;
+      toggle.setAttribute("aria-expanded", "false");
+    }
+
+    toggle.addEventListener("click", () => {
+      if (body.classList.contains("nav-open")) closeNav();
+      else openNav();
     });
+    closeBtn.addEventListener("click", closeNav);
+    overlay.addEventListener("click", closeNav);
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeNav();
+    });
+    navLinks.forEach(a => a.addEventListener("click", () => {
+      // close on mobile
+      if (window.matchMedia("(max-width: 900px)").matches) closeNav();
+    }));
+
+    // Active section highlight (IntersectionObserver)
+    const sections = ["intro", "radio", "books", "music", "movies", "gourmet", "makeup", "character", "stage", "spots", "persons", "items", "nicknames", "profile", "hiroshima"].map(id => document.getElementById(id)).filter(Boolean);
+    const navLinkById = new Map(Array.from(navLinks).map(a => [a.getAttribute("href").slice(1), a]));
+
+    const obs = new IntersectionObserver((entries) => {
+      // pick the most visible entry
+      const visible = entries
+        .filter(e => e.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+      if (!visible) return;
+      const id = visible.target.id;
+
+      navLinks.forEach(a => a.classList.remove("active"));
+      const active = navLinkById.get(id);
+      if (active) active.classList.add("active");
+    }, {
+      root: null,
+      threshold: [0.2, 0.35, 0.5, 0.65],
+      rootMargin: "-20% 0px -65% 0px"
+    });
+
+    sections.forEach(sec => obs.observe(sec));
   </script>
 </body>
 </html>
