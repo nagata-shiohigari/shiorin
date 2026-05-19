@@ -342,6 +342,66 @@
       .music-table .note { text-align: left; }
       .images-row { grid-template-columns: 1fr; }
     }
+
+
+    /* Spreadsheet-driven cards */
+    .music-artist-list,
+    .radio-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .music-artist-card,
+    .radio-card {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: rgba(26,31,113,0.035);
+      padding: 14px 16px;
+    }
+
+    .music-artist-card h3,
+    .radio-card h3 {
+      margin: 0 0 8px;
+      color: var(--primary);
+      font-size: 1.08rem;
+      line-height: 1.45;
+    }
+
+    .track-list {
+      margin: 0;
+      padding-left: 1.15rem;
+    }
+
+    .track-list li {
+      margin-bottom: 8px;
+    }
+
+    .track-title {
+      display: block;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    .track-meta,
+    .radio-meta,
+    .radio-related,
+    .related-link-list {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .radio-card p {
+      margin-bottom: 6px;
+    }
+
+    .related-link-list {
+      margin-top: 6px;
+      padding-left: 1.15rem;
+    }
+
+    .related-link-list li {
+      margin-bottom: 4px;
+    }
   </style>
 </head>
 
@@ -428,41 +488,10 @@
     </section>
     <section id="radio" class="section-card">
       <h2>ラジオ</h2>
-        <p>しおりんおすすめのラジオ番組や放送回をまとめます。</p>
-        <ul>
-        <li><a href="https://linktr.ee/hininchinouryoku" target="_blank" rel="noopener">見えない力の授業｜大人の非認知能力</a>（26/05/01≠ME 永田詩央里のけれけれ）</li>  
-        <li><a href="https://www.tbsradio.jp/noutou/" target="_blank" rel="noopener">脳盗</a>（26/03/13≠ME 永田詩央里のけれけれ）</li>
-        <li><a href="https://podcasts.apple.com/jp/podcast/%E3%82%A6%E3%82%A8%E3%82%B9%E3%83%88%E3%83%A9%E3%83%B3%E3%83%89%E4%BA%95%E5%8F%A3%E3%81%A8%E5%90%89%E4%BD%8F%E3%81%AE%E5%AD%A4%E7%8B%AC%E3%82%A2%E3%82%B8%E3%83%88/id1849295408" target="_blank" rel="noopener">ウエストランド井口と吉住の孤独アジト</a>（26/03/06≠ME 永田詩央里のけれけれ）</li>
-        <li><a href="https://www.joqr.co.jp/qr/program/golden/" target="_blank" rel="noopener">大竹まこと　ゴールデンラジオ</a>（26/02/27≠ME 永田詩央里のけれけれ）</li>
-        <li><a href="https://www.tbsradio.jp/podcast/?topics_id=103320" target="_blank" rel="noopener">五味太郎　絵本の時間</a>（26/02/20≠ME 永田詩央里のけれけれ）</li>
-        <li><a href="https://open.spotify.com/show/6unHRFZyYTqAhBVa2cWOqM" target="_blank" rel="noopener">シットとシッポ</a>（26/02/13≠ME 永田詩央里のけれけれ）</li>
-        <li><a href="https://www.nhk.jp/p/ijuin100r/rs/KZ1MQWYKVV/" target="_blank" rel="noopener">伊集院光の百年ラヂオ</a>（26/01/09≠ME 永田詩央里のけれけれ）</li>
-        <li><a href="https://www.nhk.jp/p/nerudake/rs/7NWYGZJGLV/" target="_blank" rel="noopener">又吉・児玉・向井のあとは寝るだけ</a>肩の力を抜いてゆるっと聞ける番組、自由律俳句のコーナーが好き（25/12/19≠ME 永田詩央里のけれけれ）</li>
-        <li><a href="https://open.spotify.com/show/24dWQdih85kk6TKa58VrGV" target="_blank" rel="noopener">深井・けんすうのまぼろし会議</a>（25/12/12 ≠ME 永田詩央里のけれけれ）</li>
-        <li><a href="https://www.tbsradio.jp/miemieradio/" target="_blank" rel="noopener">見えないわたしの、聞けば見えてくるラジオ</a>（25/10/31 ≠ME 永田詩央里のけれけれ）</li>
-        <li><a href="https://www.tfm.co.jp/murakamiradio/" target="_blank" rel="noopener">村上RADIO</a>新たな曲に出会うことができます（25/10/24 ≠ME 永田詩央里のけれけれ）</li>
-        <li><a href="https://podcastqr.joqr.co.jp/programs/rm-essay" target="_blank" rel="noopener">武田砂鉄　ラジオマガジン「ラジマガエッセイ」</a>（25/10/17 ≠ME 永田詩央里のけれけれ）</li>
-        <li><a href="https://sbc21.co.jp/blogwp/rdpg/mouchu/" target="_blank" rel="noopener">もう中学生のおラジオ中</a>もう中学生さんのふわっとしたしゃべりがクセになります（25/10/10 ≠ME 永田詩央里のけれけれ）</li>
-        <li><a href="https://www.tbsradio.jp/onej" target="_blank" rel="noopener">ONE-J</a>（25/10/10 ≠ME 永田詩央里のけれけれ）</li>
-        <li><a href="https://www.jorf.co.jp/?program=tabjun" target="_blank" rel="noopener">タブレット純　音楽の黄金時代</a>（25/10/03 ≠ME 永田詩央里のけれけれ）</li>
-        <li><a href="https://audee.jp/program/show/100000365" target="_blank" rel="noopener">AuDee CONNECT・水曜日【蓮見翔（ダウ90000）】</a>（25/10/03 ≠ME 永田詩央里のけれけれ）</li>
-        <li><a href="https://podcasts.apple.com/jp/podcast/%E3%82%88%E3%81%AA%E6%B0%B4-%E3%83%AA%E3%82%BF%E3%83%BC%E3%83%B3%E3%82%BA/id1701058800" target="_blank" rel="noopener">よな水　リターンズ</a>（25/09/26 ≠ME 永田詩央里のけれけれ）</li>
-        <li><a href="https://www.tbsradio.jp/nichiten/" target="_blank" rel="noopener">安住紳一郎の日曜天国 </a>（25/04/02、23/12/23、23/05/28、23/04/08 SHOWROOM、21/03/30 ノイミーステーション）</li>
-        </ul>
-        <p>　　好きなお話「<a href="https://www.youtube.com/watch?v=gc1bcv1UCP0" target="_blank" rel="noopener">アメリカ５０州覚え歌</a>」「<a href="https://youtu.be/mq3ZFsV0WzA?si=4EsDS9wItjzk1usm" target="_blank" rel="noopener">ピアニスト・西川悟平さんの回</a>」</p>
-        <ul>
-        <li><a href="https://www.nhk.jp/p/shinyabin/rs/V34XVV71R2/">ラジオ深夜便 - NHK</a>（24/04/02 、23/12/23、23/07/23、23/04/02 SHOWROOM）</li>
-        </ul>
-        <p>　　寝る時に聴く、ロマンチックコンサートでの新たな曲との出会いがおすすめ</p>
-        <ul>
-      <li><a href="https://www.fmyokohama.co.jp/program/primetime" target="_blank" rel="noopener">PRIME TIME</a> （23/07/23 SHOWROOM）</li>
-      <li><a href="https://www.tbsradio.jp/junk/" target="_blank" rel="noopener">おぎやはぎのメガネびいき</a> （23/06/24 SHOWROOM）</li>
-      <li><a href="https://www.tbsradio.jp/tokyopod/" target="_blank" rel="noopener">東京ポッド許可局</a> （23/05/28 SHOWROOM）</li>
-      <li><a href="https://www.tbsradio.jp/ht/" target="_blank" rel="noopener">ハライチのターン！</a>（23/05/23 SHOWROOM、21/03/30 ノイミーステーション）</li>
-      <li><a href="https://www.tbsradio.jp/gc/" target="_blank" rel="noopener">宮藤さんに言ってもしょうがないんですけど</a>（23/05/23 SHOWROOM）</li>
-      <li><a href="https://www.allnightnippon.com/kg/" target="_blank" rel="noopener">「井口理のオールナイトニッポン0」</a> （22/06/21 QJWeb）ラジオの入口</li>
-      <li><a href="https://www.tbsradio.jp/kamataku/" target="_blank" rel="noopener">かまいたちの ヘイ！タクシー！</a>（21/03/30 ノイミーステーション）</li>
-      </ul>
+      <p>しおりんおすすめのラジオ番組や放送回をまとめます。</p>
+      <div id="radio-list" class="radio-list" aria-live="polite">
+        <p class="muted">ラジオデータを読み込み中です...</p>
+      </div>
     </section>
     <section id="books" class="section-card">
       <h2>本・ブログ</h2>
@@ -488,363 +517,10 @@
     <section id="music" class="section-card">
       <h2>音楽</h2>
       <p>おすすめの楽曲やお気に入りアーティストなど。</p>
-      <p></p>spotifyでプレイリスト化したものは<a href="https://open.spotify.com/playlist/6zYInbc0mlVEzDXuT9pQRR?si=1SKbpm2UTpGHxNjWpLi3zA&pi=K5iRKyXkSPGFH" target="_blank" rel="noopener">こちら</a></p>
-      <ul class="music-table">
-       <li>
-      <span class="artist">品品</span>
-      <span class="track">名画座</a> </span>
-      <span class="note">26/05/08 ≠ME 永田詩央里のけれけれ</span>
-      </li>
-      <li>
-      <span class="artist">CAPSULE</span>
-      <span class="track">プラスチックガール</a> </span>
-      <span class="note">26/05/01 ≠ME 永田詩央里のけれけれ</span>
-      </li>
-      <li>
-      <span class="artist">超ときめき♡宣伝部</span>
-      <span class="track"><a href="https://www.youtube.com/watch?v=dsFGw1M0L4E" target="_blank" rel"noopener">画面越しのエンジェル</a> </span>
-      <span class="note">26/04/02 SHOWROOM</span>
-      </li> 
-      <li>
-      <span class="artist">小坂忠</span>
-      <span class="track">しらけちまうぜ </span>
-      <span class="note">26/03/20 ≠ME 永田詩央里のけれけれ</span>
-      </li> 
-      <li>
-      <span class="artist">柏原芳恵</span>
-      <span class="track">春なのに </span>
-      <span class="note">26/03/13 ≠ME 永田詩央里のけれけれ</span>
-      </li> 
-       <li>
-      <span class="artist">hal</span>
-      <span class="track">ブルーレコード </span>
-      <span class="note">26/03/06 ≠ME 永田詩央里のけれけれ</span>
-      </li>
-        <li>
-      <span class="artist">ウィークエンド</span>
-      <span class="track">春はどこから </span>
-      <span class="note">26/02/27 ≠ME 永田詩央里のけれけれ</span>
-      </li>
-       <li>
-      <span class="artist">吉田拓郎</span>
-      <span class="track">今日までそして明日から </span>
-      <span class="note">26/02/27 ≠ME 永田詩央里のけれけれ</span>
-      </li>
-       <li>
-      <span class="artist">一風堂</span>
-      <span class="track">ラジオ・ファンタジー </span>
-      <span class="note">26/02/20 ≠ME 永田詩央里のけれけれ</span>
-      </li>
-      <li>
-      <span class="artist">SHISHAMO</span>
-      <span class="track"><a href="https://youtu.be/qp-iW7ULTw0?si=jpTcDBoAQSxliuZz" target="_blank" rel="noopener">お菓子作り</a> </span>
-      <span class="note">26/02/13 ≠ME 永田詩央里のけれけれ</span>
-      </li>  
-       <li>
-      <span class="artist">MONO NO AWARE</span>
-      <span class="track"><a href="https://youtu.be/Q0o8XfGJ7NQ?si=YEPADhh5a7RMuwTQ" target="_blank" rel="noopener">野菜もどうぞ</a> </span>
-      <span class="note">26/01/30 ≠ME 永田詩央里のけれけれ</span>
-      </li>  
-
-      <li>
-      <span class="artist">小椋佳 </span>
-      <span class="track">坂道 </span>
-      <span class="note">26/01/09 ≠ME 永田詩央里のけれけれ</span>
-      </li>  
-      <li>
-      <span class="artist">ゆっきゅん</span>
-      <span class="track">ログアウト・ボーナス</span>
-      <span class="note">25/12/12 ≠ME 永田詩央里のけれけれ</span>
-      </li>  
-      <li>
-      <span class="artist">荒井由実</span>
-      <span class="track">何も聞かないで</span>
-      <span class="note">25/12/05 ≠ME 永田詩央里のけれけれ</span>
-      </li>  
-      <li>
-      <span class="artist">イルリメ</span>
-      <span class="track">君の好きなバンド</span>
-      <span class="note">25/11/07 ≠ME 永田詩央里のけれけれ</span>
-      </li>     
-      <li>
-      <span class="artist">フラワー・メグ</span>
-      <span class="track">ラストダンスは私に</span>
-      <span class="note">25/10/31 ≠ME 永田詩央里のけれけれ</span>
-      </li>
-      <li>
-      <span class="artist">BUMP OF CHICKEN</span>
-      <span class="track">ひとりごと</span>
-      <span class="note">25/10/31 ≠ME 永田詩央里のけれけれ</span>
-      </li>
-      <li>
-      <span class="artist">吉田拓郎</span>
-      <span class="track">ガラスの言葉</span>
-      <span class="note">25/10/24 ≠ME 永田詩央里のけれけれ</span>
-      </li>
-      <li>
-      <span class="artist">かぐや姫</span>
-      <span class="track">大きな片想い</span>
-      <span class="note">25/10/17 ≠ME 永田詩央里のけれけれ</span>   
-       </li>
-       <li>
-      <span class="artist">ガロ</span>
-      <span class="track">小さな恋</span>
-      <span class="note">25/10/10 ≠ME 永田詩央里のけれけれ</span>   
-       </li>
-       <li>
-      <span class="artist">HALCALI</span>
-      <span class="track">今日の私はキゲンがいい</span>
-      <span class="note">25/10/03 ≠ME 永田詩央里のけれけれ</span>
-      </li>
-      <li>
-      <span class="artist">麻丘めぐみ</span>
-      <span class="track">悲しみよこんにちは</span>
-      <span class="note">25/09/19 ≠ME 永田詩央里のけれけれ</span>
-      </li>
-      <li>
-      <span class="artist">テレビ大陸音頭</span>
-      <span class="track"><a href="https://youtu.be/wPEO7EoM78U?si=QTaM9hJsGaoILkm1" target="_blank" rel="noopener">夜について</a></span>
-      <span class="note">25/09/12 ≠ME 永田詩央里のけれけれ</span>  
-      </li>
-      <li>
-      <span class="artist">ピチカート・ファイヴ</span>
-      <span class="track">これは恋ではない</span>
-      <span class="note">25/09/05 ≠ME 永田詩央里のけれけれ</span>
-      </li>
-      <li>
-      <span class="artist">純烈</span>
-      <span class="track">君が涙をくれる時</span>
-      <span class="note">25/09/05 ≠ME 永田詩央里のけれけれ</span>
-      </li>
-      <li>
-      <span class="artist">くるり</span>
-      <span class="track">Hello Radio</span>
-      <span class="note">25/09/05 ≠ME 永田詩央里のけれけれ</span>
-      </li>
-      <li>
-      <span class="artist">NMB48 TeamN</span>
-      <span class="track">Radio name</span>
-      <span class="note">25/09/05 ≠ME 永田詩央里のけれけれ</span>
-      </li>
-      <li>
-      <span class="artist">眞名子新</span>
-      <span class="track">ラジオ</span>
-      <span class="note">25/09/05 ≠ME 永田詩央里のけれけれ</span>
-      </li>
-      <li>
-      <span class="artist">戸川純</span>
-      <span class="track">ラジオのように</span>
-      <span class="note">25/09/05 ≠ME 永田詩央里のけれけれ</span>
-      </li>
-      <li>
-      <span class="artist">The Buggles</span>
-      <span class="track">ラジオ・スターの悲劇（Video Killed the Radio Star）</span>
-      <span class="note">25/09/05 ≠ME 永田詩央里のけれけれ</span>
-      </li>
-      <li>
-      <span class="artist">スピッツ</span>
-      <span class="track">魔法のコトバ、ラジオデイズ</span>
-      <span class="note">26/03/27、25/09/05 ≠ME 永田詩央里のけれけれ</span>
-      </li> 
-      <li>
-      <span class="artist">佐野元春</span>
-      <span class="track">悲しきRADIO</span>
-      <span class="note">25/09/05 ≠ME 永田詩央里のけれけれ</span>
-      </li> 
-      <li>
-      <span class="artist">赤い公演</span>
-      <span class="track">NOW ON AIR</span>
-      <span class="note">25/09/05 ≠ME 永田詩央里のけれけれ</span>
-      </li>  
-      <li>
-      <span class="artist">原田真二</span>
-      <span class="track">てぃーんず ぶるーす</span>
-      <span class="note">25/08/29 ≠ME 永田詩央里のけれけれ</span>
-      </li>  
-      <li>
-      <span class="artist">The Birthday</span>
-      <span class="track">なぜか今日は</span>
-      <span class="note">25/08/15 ≠ME 永田詩央里のけれけれ</span>
-      </li>  
-      <li>
-      <span class="artist">須賀響子</span>
-      <span class="track">近道したい</span>
-      <span class="note">25/07/18 ≠ME 永田詩央里のけれけれ</span>
-      </li>  
-      <li>
-      <span class="artist">南佳孝</span>
-      <span class="track">回転扉、憧れのラジオ・ガール</span>
-      <span class="note">26/04/24、25/07/11 ≠ME 永田詩央里のけれけれ</span>
-      </li>  
-      <li>
-      <span class="artist">N'夙川BOYS</span>
-      <span class="track"><a href="https://youtu.be/e106Nc7hNq4?si=6AcyX1ry52qEXaoi" target="_blank" rel="noopener">プラネットマジック</a></span>
-      <span class="note">25/07/10　ノイミーステーション</span>
-      </li>
-      <li>
-      <span class="artist">サディスティック・ミカ・バンド</span>
-      <span class="track">タイムマシンにおねがい</span>
-      <span class="note">25/07/04 ≠ME 永田詩央里のけれけれ</span>
-      </li>  
-      <li>
-      <span class="artist">Sagittarius</span>
-      <span class="track">My World Fell Down</span>
-      <span class="note">25/06/16 Instagramストーリーズ</span>
-      </li>
-      <li>
-      <span class="artist">サンドパイパーズ</span>
-      <span class="track"><a href="https://youtu.be/a0f3-HKjTMY?si=FHHH7SIiCeUSsGAr" target="_blank" rel="noopener">Chotto Matte Kudasi (Never Can Say Goodbye)</a></span>
-      <span class="note">25/05/16 Instagramストーリーズ</span>
-      </li>
-        <li>
-      <span class="artist">クロディーヌ・ロンジェ</span>
-      <span class="track">フー・ニーズ・ユー</span>
-      <span class="note">25/04/21 Instagramストーリーズ</span>
-      </li>
-      <li>
-      <span class="artist">かぐや姫</span>
-      <span class="track">ポカポカ日曜日</span>
-      <span class="note">25/03/23 Instagramストーリーズ</span>
-      </li>
-      <li>
-      <span class="artist">HALCALI</span>
-      <span class="track">まばたき</span>
-      <span class="note">25/02/27 Instagramストーリーズ</span>
-      </li>
-      <li>
-      <span class="artist">ガロ</span>
-      <span class="track">美しすぎて</span>
-      <span class="note">25/01/21 Instagramストーリーズ</span>
-      </li> 
-       <li>
-      <span class="artist">LITTLE TEMPO</span>
-      <span class="track">星空（最近ダブが気になっています🎧）</span>
-      <span class="note">24/11/25 Instagramストーリーズ</span>
-      </li>
-     <li>
-      <span class="artist">≠ME</span>
-      <span class="track">夏が来たから</span>
-      <span class="note">24/08/28 <a href="https://music.line.me/webapp/playlist/upi7nLrdtfvhxjzlBsCJZME-GwISN3C6t7j7" target="_blank" rel="noopener">LINE MUSIC 夏が来たから聴きたいプレイリスト</a></span>
-      </li>
-       <li>
-      <span class="artist">河合奈保子</span>
-      <span class="track">夏のヒロイン</span>
-      <span class="note">25/08/02 ≠ME 永田詩央里のけれけれ、24/08/28 <a href="https://music.line.me/webapp/playlist/upi7nLrdtfvhxjzlBsCJZME-GwISN3C6t7j7" target="_blank" rel="noopener">LINE MUSIC 夏が来たから聴きたいプレイリスト</a></span>
-      </li>
-       <li>
-      <span class="artist">はっぴいえんど</span>
-      <span class="track">夏なんです</span>
-      <span class="note">24/08/28 <a href="https://music.line.me/webapp/playlist/upi7nLrdtfvhxjzlBsCJZME-GwISN3C6t7j7" target="_blank" rel="noopener">LINE MUSIC 夏が来たから聴きたいプレイリスト</a></span>
-      </li>
-       <li>
-      <span class="artist">吉田拓郎</span>
-      <span class="track">夏休み</span>
-      <span class="note">25/08/08 ≠ME 永田詩央里のけれけれ、24/08/28 <a href="https://music.line.me/webapp/playlist/upi7nLrdtfvhxjzlBsCJZME-GwISN3C6t7j7" target="_blank" rel="noopener">LINE MUSIC 夏が来たから聴きたいプレイリスト</a></span>
-      </li>
-       <li>
-      <span class="artist">かせきさいだぁ</span>
-      <span class="track">水色のいろおぜ</span>
-      <span class="note">24/08/28 <a href="https://music.line.me/webapp/playlist/upi7nLrdtfvhxjzlBsCJZME-GwISN3C6t7j7" target="_blank" rel="noopener">LINE MUSIC 夏が来たから聴きたいプレイリスト</a></span>
-      </li>
-      <li>
-      <span class="artist">FLIPPER'S GUITAR</span>
-      <span class="track">Wild Wild Summer/ワイルド・サマー/ビートでゴーゴー</span>
-      <span class="note">24/08/28 <a href="https://music.line.me/webapp/playlist/upi7nLrdtfvhxjzlBsCJZME-GwISN3C6t7j7" target="_blank" rel="noopener">LINE MUSIC 夏が来たから聴きたいプレイリスト</a></span>
-      </li>
-      <li>
-      <span class="artist">斉藤由貴</span>
-      <span class="track">砂の城</span>
-      <span class="note">24/08/28 <a href="https://music.line.me/webapp/playlist/upi7nLrdtfvhxjzlBsCJZME-GwISN3C6t7j7" target="_blank" rel="noopener">LINE MUSIC 夏が来たから聴きたいプレイリスト</a></span>
-      </li>
-       <li>
-      <span class="artist">河合その子</span>
-      <span class="track">涙の茉莉花LOVE、海の足跡</span>
-      <span class="note">25/07/25 ≠ME 永田詩央里のけれけれ、24/08/28 <a href="https://music.line.me/webapp/playlist/upi7nLrdtfvhxjzlBsCJZME-GwISN3C6t7j7" target="_blank" rel="noopener">LINE MUSIC 夏が来たから聴きたいプレイリスト</a></span>
-      </li>
-       <li>
-      <span class="artist">≠ME</span>
-      <span class="track">君はこの夏、恋をする</span>
-      <span class="note">24/08/28 <a href="https://music.line.me/webapp/playlist/upi7nLrdtfvhxjzlBsCJZME-GwISN3C6t7j7" target="_blank" rel="noopener">LINE MUSIC 夏が来たから聴きたいプレイリスト</a></span>
-      </li>
-        <li>
-      <span class="artist">TOWA TEI</span>
-      <span class="track"><a href="https://www.youtube.com/watch?v=5T-pnwfRF7g" target="_blank" rel="noopener">AMAI SEIKATSU</a></span>
-      <span class="note">24/06/08 Instagramストーリーズ</span>
-      </li>
-        <li>
-      <span class="artist">Chet Baker</span>
-      <span class="track">My Funny Valentine</span>
-      <span class="note">24/06/03 ノイミーステーション</span>
-      </li>
-        <li>
-      <span class="artist">Skeeter Davis</span>
-      <span class="track">The End Of The World</span>
-      <span class="note">24/06/03 ノイミーステーション</span>
-      </li>
-        <li>
-      <span class="artist">浅川マキ</span>
-      <span class="track">時代に合わせて呼吸をする積りはない、夜が明けたら</span>
-      <span class="note">26/01/02 ≠ME 永田詩央里のけれけれ、24/06/03 ノイミーステーション</span>
-      </li>
-        <li>
-      <span class="artist">ブレッド＆バター</span>
-      <span class="track">SUMMER BLUE</span>
-      <span class="note">24/08/28 <a href="https://music.line.me/webapp/playlist/upi7nLrdtfvhxjzlBsCJZME-GwISN3C6t7j7" target="_blank" rel="noopener">LINE MUSIC 夏が来たから聴きたいプレイリスト</a>、24/06/03 ノイミーステーション</span>
-      </li>
-        <li>
-      <span class="artist">Wings</span>
-      <span class="track">Silly Love Songs</span>
-      <span class="note">24/12/31 SHOWROOM、24/06/03 ノイミーステーション</span>
-      </li>
-        <li>
-      <span class="artist">フィッシュマンズ</span>
-      <span class="track">感謝（驚）、MY LIFE、Go Go Round This World!</span>
-      <span class="note">26/04/17、26/04/10、25/09/26 ≠ME 永田詩央里のけれけれ、24/04/14 SHOWROOM</span>
-      </li>
-        <li>
-      <span class="artist">THEE MICHELLE GUN ELEPHANT</span>
-      <span class="track"><a href="https://youtu.be/ay3geLv2Vgs?si=yhzKsUM08MV_DU0k" target="_blank" rel="noopener">デッドマンズ・ギャラクシー・デイズ</a>、
-                            スイミング・ラジオ<a href="https://youtu.be/k1yG6Gyr05g?si=NekRtZOKO88lrCmf" target="_blank" rel="noopener">talkin'bout you</a>、
-        <a href="https://youtu.be/eB8vy1Ha-aQ?si=sOs8z2XccSn6cw0_" target="_blank" rel="noopener">プラズマダイブ</a></span>
-      <span class="note">25/11/28、25/09/05 ≠ME 永田詩央里のけれけれ、25/08/05 Instagramストーリーズ、24/04/14、23/07/23 SHOWROOM、21/03/30 ノイミーステーション</span>
-      </li>
-        <li>
-      <span class="artist">JUDY AND MARY</span>
-      <span class="track">RADIO、ジーザス！ジーザス！、散歩道</span>
-      <span class="note">25/08/08 ≠ME 永田詩央里のけれけれ、24/04/14 SHOWROOM</span>
-      </li>
-        <li>
-      <span class="artist">-</span>
-      <span class="track"><a href="https://www.youtube.com/watch?v=xsCIHVKJKyg" target="_blank" rel="noopener">ラブリイエブリイ</a>（広島を中心としたスーパーエブリイのテーマソング）</span>
-      <span class="note">24/04/11 教えて、花便り</span>
-      </li>
-        <li>
-      <span class="artist">れみ from STAR☆ANIS</span>
-      <span class="track">Angel Snow</span>
-      <span class="note">カラオケ十八番、アニメアイカツ！挿入歌、23/09/24 SHOWROOM</span>
-      </li>
-        <li>
-      <span class="artist">松浦亜弥</span>
-      <span class="track"><a href="https://youtu.be/z-ApZFvjVbE?si=7iAX7nNAH_1yx0la" target="_blank" rel="noopener">ドッキドキ！LOVEメール</a>、
-                          <a href="https://youtu.be/B85xamk1FEM?si=-csLnL70DHtiZ0GX" target="_blank" rel="noopener">LOVE涙色</a></span>
-      <span class="note">カラオケでよく歌う、23/09/24 SHOWROOM</span>
-      </li>
-        <li>
-      <span class="artist">スマイレージ</span>
-      <span class="track"><a href="https://www.youtube.com/watch?v=ZxFhVH2tNzc" target="_blank" rel="noopener">寒いね。</a></span>
-      <span class="note">23/09/24 SHOWROOM</span>
-      </li>
-        <li>
-      <span class="artist">相対性理論</span>
-      <span class="track">地獄先生</span>
-      <span class="note">23/09/24 SHOWROOM</span>
-      </li>
-        <li>
-      <span class="artist">BiSH</span>
-      <span class="track"><a href="https://youtu.be/bTXkgDClE34?si=d7myKMQ1aDPkRN5W" target="_blank" rel="noopener">Marionette</a>、
-                          <a href="https://youtu.be/_v0wjd45DQI?si=FPBnBIri-OK7Xkt6" target="_blank" rel="noopener">GiANT KiLLERS</a>　</span>
-      <span class="note">26/04/02、23/09/24 SHOWROOM、20/04/11 HUSTLE PRESS</span>
-      </li>
+      <p>Spotifyでプレイリスト化したものは<a href="https://open.spotify.com/playlist/6zYInbc0mlVEzDXuT9pQRR?si=1SKbpm2UTpGHxNjWpLi3zA&pi=K5iRKyXkSPGFH" target="_blank" rel="noopener">こちら</a></p>
+      <div id="music-list" class="music-artist-list" aria-live="polite">
+        <p class="muted">音楽データを読み込み中です...</p>
+      </div>
     </section>
     <section id="movies" class="section-card">
       <h2>映画・ドラマ・動画</h2>
@@ -1197,5 +873,217 @@
 
     sections.forEach(sec => obs.observe(sec));
   </script>
+
+  <script>
+    // Googleスプレッドシート（CSV公開URL）から音楽・ラジオデータを読み込む
+    const SHEET_URLS = {
+      musicArtists: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRL260Ss2cvrGPVMaPg2NWn0HDo5GysSwz2zZ-CcJGjokWyxJnEr_Z_gQW-cAsqdvtr4pVKqbZkkWB4/pub?gid=232365463&single=true&output=csv",
+      musicTracks: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRL260Ss2cvrGPVMaPg2NWn0HDo5GysSwz2zZ-CcJGjokWyxJnEr_Z_gQW-cAsqdvtr4pVKqbZkkWB4/pub?gid=1596870111&single=true&output=csv",
+      radioPrograms: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRL260Ss2cvrGPVMaPg2NWn0HDo5GysSwz2zZ-CcJGjokWyxJnEr_Z_gQW-cAsqdvtr4pVKqbZkkWB4/pub?gid=1997763925&single=true&output=csv"
+    };
+
+    async function fetchCsv(url) {
+      const response = await fetch(url, { cache: "no-store" });
+      if (!response.ok) throw new Error(`CSVを読み込めませんでした: ${url}`);
+      const text = await response.text();
+      return parseCsv(text);
+    }
+
+    function parseCsv(text) {
+      const rows = [];
+      let row = [];
+      let cell = "";
+      let inQuotes = false;
+      const cleaned = text.replace(/^﻿/, "");
+
+      for (let i = 0; i < cleaned.length; i++) {
+        const char = cleaned[i];
+        const next = cleaned[i + 1];
+
+        if (char === '"' && inQuotes && next === '"') {
+          cell += '"';
+          i++;
+        } else if (char === '"') {
+          inQuotes = !inQuotes;
+        } else if (char === ',' && !inQuotes) {
+          row.push(cell);
+          cell = "";
+        } else if ((char === '
+' || char === '
+') && !inQuotes) {
+          if (char === '
+' && next === '
+') i++;
+          row.push(cell);
+          if (row.some(value => value.trim() !== "")) rows.push(row);
+          row = [];
+          cell = "";
+        } else {
+          cell += char;
+        }
+      }
+
+      if (cell || row.length) {
+        row.push(cell);
+        if (row.some(value => value.trim() !== "")) rows.push(row);
+      }
+
+      if (!rows.length) return [];
+      const headers = rows.shift().map(header => header.trim());
+      return rows.map(values => {
+        const item = {};
+        headers.forEach((header, index) => {
+          item[header] = (values[index] || "").trim();
+        });
+        return item;
+      });
+    }
+
+    function escapeHtml(value) {
+      return String(value || "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    function safeUrl(value) {
+      const url = String(value || "").trim();
+      if (!url) return "";
+      try {
+        const parsed = new URL(url);
+        return ["http:", "https:"].includes(parsed.protocol) ? parsed.href : "";
+      } catch {
+        return "";
+      }
+    }
+
+    function renderMusic(artists, tracks) {
+      const container = document.getElementById("music-list");
+      if (!container) return;
+
+      const trackMap = new Map();
+      tracks.forEach(track => {
+        const artist = (track.artist || "").trim();
+        const title = (track.track_title || "").trim();
+        if (!artist || !title) return;
+        if (!trackMap.has(artist)) trackMap.set(artist, []);
+        trackMap.get(artist).push(track);
+      });
+
+      const artistNames = [];
+      artists.forEach(row => {
+        const artist = (row.artist || "").trim();
+        if (artist && !artistNames.includes(artist)) artistNames.push(artist);
+      });
+
+      // 万一 music_tracks 側だけに存在するアーティストがあれば最後に追加する
+      trackMap.forEach((_, artist) => {
+        if (!artistNames.includes(artist)) artistNames.push(artist);
+      });
+
+      const html = artistNames.map(artist => {
+        const artistTracks = trackMap.get(artist) || [];
+        const trackHtml = artistTracks.length
+          ? `<ul class="track-list">${artistTracks.map(track => `
+              <li>
+                <span class="track-title">${escapeHtml(track.track_title)}</span>
+                ${track.mention_text ? `<span class="track-meta">${escapeHtml(track.mention_text)}</span>` : ""}
+              </li>
+            `).join("")}</ul>`
+          : `<p class="muted">曲データ未登録</p>`;
+
+        return `
+          <article class="music-artist-card">
+            <h3>${escapeHtml(artist)}</h3>
+            ${trackHtml}
+          </article>
+        `;
+      }).join("");
+
+      container.innerHTML = html || `<p class="muted">音楽データがありません。</p>`;
+    }
+
+    function renderRelatedLinks(value) {
+      const text = String(value || "").trim();
+      if (!text) return "";
+
+      const lines = text.split(/
+?
+/).map(line => line.trim()).filter(Boolean);
+      if (!lines.length) return "";
+
+      const items = lines.map(line => {
+        const match = line.match(/^(.*?):\s*(https?:\/\/\S+)$/);
+        if (match) {
+          const label = match[1].trim() || match[2];
+          const url = safeUrl(match[2]);
+          if (url) return `<li><a href="${escapeHtml(url)}" target="_blank" rel="noopener">${escapeHtml(label)}</a></li>`;
+        }
+
+        const urlMatch = line.match(/https?:\/\/\S+/);
+        if (urlMatch) {
+          const url = safeUrl(urlMatch[0]);
+          const label = line.replace(urlMatch[0], "").replace(/[：:]/g, "").trim() || url;
+          return url
+            ? `<li><a href="${escapeHtml(url)}" target="_blank" rel="noopener">${escapeHtml(label)}</a></li>`
+            : `<li>${escapeHtml(line)}</li>`;
+        }
+
+        return `<li>${escapeHtml(line)}</li>`;
+      }).join("");
+
+      return `<ul class="related-link-list">${items}</ul>`;
+    }
+
+    function renderRadio(programs) {
+      const container = document.getElementById("radio-list");
+      if (!container) return;
+
+      const html = programs
+        .filter(program => (program.program_title || "").trim())
+        .map(program => {
+          const url = safeUrl(program.url);
+          const title = url
+            ? `<a href="${escapeHtml(url)}" target="_blank" rel="noopener">${escapeHtml(program.program_title)}</a>`
+            : escapeHtml(program.program_title);
+
+          return `
+            <article class="radio-card">
+              <h3>${title}</h3>
+              ${program.description ? `<p>${escapeHtml(program.description)}</p>` : ""}
+              ${program.mention_text ? `<p class="radio-meta">${escapeHtml(program.mention_text)}</p>` : ""}
+              ${program.related_links ? renderRelatedLinks(program.related_links) : ""}
+            </article>
+          `;
+        })
+        .join("");
+
+      container.innerHTML = html || `<p class="muted">ラジオデータがありません。</p>`;
+    }
+
+    async function initSheetData() {
+      try {
+        const [artists, tracks, radioPrograms] = await Promise.all([
+          fetchCsv(SHEET_URLS.musicArtists),
+          fetchCsv(SHEET_URLS.musicTracks),
+          fetchCsv(SHEET_URLS.radioPrograms)
+        ]);
+
+        renderMusic(artists, tracks);
+        renderRadio(radioPrograms);
+      } catch (error) {
+        console.error(error);
+        const music = document.getElementById("music-list");
+        const radio = document.getElementById("radio-list");
+        if (music) music.innerHTML = `<p class="muted">音楽データを読み込めませんでした。スプレッドシートの公開設定を確認してください。</p>`;
+        if (radio) radio.innerHTML = `<p class="muted">ラジオデータを読み込めませんでした。スプレッドシートの公開設定を確認してください。</p>`;
+      }
+    }
+
+    initSheetData();
+  </script>
+
 </body>
 </html>
