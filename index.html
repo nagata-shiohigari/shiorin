@@ -1009,9 +1009,7 @@
       const text = String(value || "").trim();
       if (!text) return "";
 
-      const lines = text.split(/
-?
-/).map(line => line.trim()).filter(Boolean);
+      const lines = text.split(/\r?\n/).map(line => line.trim()).filter(Boolean);
       if (!lines.length) return "";
 
       const items = lines.map(line => {
